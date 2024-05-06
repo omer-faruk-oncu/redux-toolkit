@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import Navbar from "../components/Navbar";
-import Login from "../pages/Login";
-import PrivateRouter from "./PrivateRouter";
-import News from "../pages/News";
+import Navbar from "../components/Navbar"
+import Login from "../pages/Login"
+import PrivateRouter from "./PrivateRouter"
+import News from "../pages/News"
 
 const AppRouter = () => {
   return (
@@ -17,7 +17,7 @@ const AppRouter = () => {
         <Route path="login" element={<Login />} />
       </Routes>
     </Router>
-  );
-};
+  )
+}
 
-export default AppRouter;
+export default AppRouter

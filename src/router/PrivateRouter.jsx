@@ -1,11 +1,23 @@
-import { useSelector } from "react-redux";
-import { Navigate, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-const PrivateRouter = () => {
-  //const user = true;
+import Navbar from "../components/Navbar"
+import Login from "../pages/Login"
+import PrivateRouter from "./PrivateRouter"
+import News from "../pages/News"
 
-const {user} =useSelector((state) => state.login)
-  return user.email && user.password ? <Outlet /> : <Navigate to="/login" />;
-};
+const AppRouter = () => {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<PrivateRouter />}>
+          <Route path="" element={<News />} />
+        </Route>
 
-export default PrivateRouter;
+        <Route path="login" element={<Login />} />
+      </Routes>
+    </Router>
+  )
+}
+
+export default AppRouter
